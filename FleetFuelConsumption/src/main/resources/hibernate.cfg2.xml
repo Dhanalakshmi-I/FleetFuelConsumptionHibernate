@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Oracle Dialect (Hibernate 6) -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.OracleDialect
+        </property>
+
+        <!-- Oracle JDBC Driver -->
+        <property name="hibernate.connection.driver_class">
+            oracle.jdbc.OracleDriver
+        </property>
+
+        <!-- Oracle XE Connection -->
+        <property name="hibernate.connection.url">
+            jdbc:oracle:thin:@localhost:1521:xe
+        </property>
+
+        <!-- Database Credentials -->
+        <property name="hibernate.connection.username">dhana</property>
+        <property name="hibernate.connection.password">admin</property>
+
+        <!-- Hibernate Settings -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Entity Mapping -->
+        <mapping class="com.fleet.bean.Vehicle"/>
+        <mapping class="com.fleet.bean.Trip"/>
+        <mapping class="com.fleet.bean.FuelExpense"/>
+        
+
+    </session-factory>
+</hibernate-configuration>
